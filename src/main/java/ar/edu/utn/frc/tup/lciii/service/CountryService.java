@@ -1,5 +1,6 @@
 package ar.edu.utn.frc.tup.lciii.service;
 
+import ar.edu.utn.frc.tup.lciii.dtos.common.CountryDTO;
 import ar.edu.utn.frc.tup.lciii.model.Country;
 import ar.edu.utn.frc.tup.lciii.repository.CountryRepository;
 import lombok.RequiredArgsConstructor;
@@ -36,6 +37,8 @@ public class CountryService {
                         .area(((Number) countryData.get("area")).doubleValue())
                         .region((String) countryData.get("region"))
                         .languages((Map<String, String>) countryData.get("languages"))
+                        .code((String) countryData.get("cca3"))
+                        .borders((List<String>) countryData.get("borders"))
                         .build();
         }
 
@@ -43,4 +46,7 @@ public class CountryService {
         private CountryDTO mapToDTO(Country country) {
                 return new CountryDTO(country.getCode(), country.getName());
         }
+
+
+
 }

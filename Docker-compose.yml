@@ -1,0 +1,5 @@
+services:
+  app-country:
+    build: .
+    ports:
+      - "8080:8080"

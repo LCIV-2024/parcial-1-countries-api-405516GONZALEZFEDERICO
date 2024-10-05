@@ -22,4 +22,5 @@ public class Country {
     private String region;
     private List<String> borders;
     private Map<String, String> languages;
+
 }
